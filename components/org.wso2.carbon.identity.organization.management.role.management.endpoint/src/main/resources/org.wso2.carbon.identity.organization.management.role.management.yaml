@@ -10,7 +10,7 @@ info:
     name: Apache 2.0
     url: 'http://www.apache.org/licenses/LICENSE-2.0.html'
 servers:
-  - url: 'https://{server-url}/o/{organization-domain}/api/server/v1'
+  - url: 'https://{server-url}/o/{organization-domain}/api/server/v1/organizations'
     variables:
       server-url:
         default: 'localhost:9443'
@@ -21,7 +21,7 @@ security:
   - BasicAuth: [ ]
 
 paths:
-  /organizations/{organization-id}/roles:
+  /{organization-id}/roles:
     post:
       summary:
         Create a role inside an organization.
@@ -96,7 +96,7 @@ paths:
       tags:
         - Organization Role Management
 
-  /organizations/{organization-id}/roles/{role-id}:
+  /{organization-id}/roles/{role-id}:
     get:
       summary:
         Get role by ID

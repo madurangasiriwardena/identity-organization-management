@@ -41,7 +41,7 @@ import io.swagger.annotations.*;
 
 import javax.validation.constraints.*;
 
-@Path("/organizations")
+@Path("/")
 @Api(description = "The organizations API")
 
 public class OrganizationsApi  {

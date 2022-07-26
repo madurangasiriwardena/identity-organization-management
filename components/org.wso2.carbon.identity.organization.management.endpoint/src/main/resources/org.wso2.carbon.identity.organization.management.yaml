@@ -11,7 +11,7 @@ info:
     name: Apache 2.0
     url: 'http://www.apache.org/licenses/LICENSE-2.0.html'
 servers:
-  - url: 'https://localhost:9443/o/{organization-domain}/api/server/v1'
+  - url: 'https://localhost:9443/o/{organization-domain}/api/server/v1/organizations'
     variables:
       organization-domain:
         default: 10084a8d-113f-4211-a0d5-efe36b082211
@@ -20,7 +20,7 @@ security:
   - BasicAuth: []
 
 paths:
-  /organizations:
+  /:
     post:
       tags:
         - Organization
@@ -86,7 +86,7 @@ paths:
       tags:
         - Organization
 
-  /organizations/{organization-id}:
+  /{organization-id}:
     get:
       description:
         This API is used to get an existing organization identified by the organization ID.
@@ -223,7 +223,7 @@ paths:
           $ref: '#/components/responses/ServerError'
       tags:
         - Organization
-  /organizations/{organization-id}/applications/{application-id}/share:
+  /{organization-id}/applications/{application-id}/share:
     post:
       summary: |
         Share application from the parent organization to given organization
